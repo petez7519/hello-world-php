@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hello-world-php
+  name: hello-world-php
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world-php
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hello-world-php
+    spec:
+      containers:
+      - image: hello-world-php
+        name: hello-world-php
+        imagePullPolicy: Never  # make sure it uses the local one
+        resources: {}
+status: {}
